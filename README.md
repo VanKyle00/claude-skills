@@ -22,6 +22,26 @@ distinctness gate, then contrasting the survivors and recommending one.
 
 Invoke it explicitly — e.g. *"use the rethink skill"* or *"rethink this."*
 
+### `youtube-learn`
+
+Lets Claude actually learn from a YouTube video instead of just its title.
+
+YouTube doesn't expose a video's transcript or audio to the page-fetch tool — scraping the
+URL returns only the title, so Claude is effectively blind and deaf to the content. This skill
+closes that gap by driving `yt-dlp` + `ffmpeg`:
+
+- **Keyframes** — captures frames at scene changes *plus* a forced frame every N seconds, so
+  slides, charts, demos, and faces are all visible (and won't be missed during slow sections).
+- **Transcript** — uses YouTube's own captions when available (instant), and falls back to local
+  Whisper transcription only when a video has none.
+
+It bundles everything into a `manifest.md` that interleaves each keyframe image with the
+transcript spanning that moment, which Claude then reads (images included) to summarize, analyze,
+or fact-check the video — citing `[mm:ss]` timestamps.
+
+Triggers on sharing a YouTube link with an analysis ask — e.g. *"what can you learn from this
+video?"* or *"summarize this YouTube video."* Requires `yt-dlp` and `ffmpeg` on `PATH`.
+
 ## Installing
 
 Copy a skill folder into your Claude Code skills directory:
