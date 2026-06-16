@@ -42,6 +42,19 @@ or fact-check the video — citing `[mm:ss]` timestamps.
 Triggers on sharing a YouTube link with an analysis ask — e.g. *"what can you learn from this
 video?"* or *"summarize this YouTube video."* Requires `yt-dlp` and `ffmpeg` on `PATH`.
 
+### `lean-search`
+
+Keeps web research token-cheap and out of the main context window.
+
+Web search has two costs that need different fixes: raw results **bloat the main
+context** (fix: isolate the search inside a subagent that returns only a
+conclusion) and **run up the bill** (fix: search before fetching, fetch with a
+tight extraction prompt, never fetch twice). `lean-search` codifies the flow —
+snippets-first, fetch narrow, and a clear inline-vs-subagent threshold so a
+one-page lookup doesn't spawn a whole extra billed context.
+
+Triggers before any WebSearch/WebFetch or web-research dispatch.
+
 ## Installing
 
 Copy a skill folder into your Claude Code skills directory:
