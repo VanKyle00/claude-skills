@@ -55,6 +55,23 @@ one-page lookup doesn't spawn a whole extra billed context.
 
 Triggers before any WebSearch/WebFetch or web-research dispatch.
 
+**Measured impact** — single A/B trial, same question (*"most notable new
+features in Python 3.13?"*) answered via isolated subagents:
+
+| | Naive (full-page fetches) | Lean (snippets-first) |
+|---|---|---|
+| Page fetches | 4 | **0** |
+| Total tokens | 33,129 | **27,204 (−18%)** |
+| Wall-clock | 76s | **18s (4.2× faster)** |
+| Answer | full | equivalent |
+
+Same answer, ~18% fewer tokens, 4× faster — the lean run got everything from
+search snippets without fetching a single page. And because the search stayed
+isolated, only a ~150-token summary reached the main context instead of ~5,900
+tokens of fetched page content — roughly **40× less main-context cost**. (n=1
+and snippet-friendly, so treat as directional; the gap widens on questions that
+genuinely require fetching.)
+
 ## Installing
 
 Copy a skill folder into your Claude Code skills directory:
