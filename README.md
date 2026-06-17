@@ -2,6 +2,8 @@
 
 A collection of personal [Claude Code](https://docs.claude.com/en/docs/claude-code) skills.
 
+[![Install with skills.sh](https://skills.sh/b/VanKyle00/claude-skills)](https://skills.sh/VanKyle00/claude-skills)
+
 ## Skills
 
 ### `rethink`
@@ -74,7 +76,17 @@ genuinely require fetching.)
 
 ## Installing
 
-Copy a skill folder into your Claude Code skills directory:
+With the [`skills`](https://github.com/vercel-labs/skills) CLI (works with Claude Code, Codex, Cursor, and more):
+
+```bash
+# All skills
+npx skills add VanKyle00/claude-skills
+
+# Or pick specific ones
+npx skills add VanKyle00/claude-skills --skill rethink --skill lean-search
+```
+
+Or copy a skill folder into your Claude Code skills directory manually:
 
 ```bash
 # macOS / Linux

@@ -1,6 +1,11 @@
 ---
 name: lean-search
-description: Use BEFORE running WebSearch or WebFetch, or before dispatching an agent to research on the web — keeps web research token-cheap and out of the main context window. Triggers: any task needing current/external info, "search the web", "look this up", "research X online", fetching docs/articles, or noticing web results are bloating the conversation.
+description: >-
+  Use BEFORE running WebSearch or WebFetch, or before dispatching an agent to
+  research on the web — keeps web research token-cheap and out of the main context
+  window. Triggers: any task needing current/external info, "search the web", "look
+  this up", "research X online", fetching docs/articles, or noticing web results
+  are bloating the conversation.
 ---
 
 # Lean Search

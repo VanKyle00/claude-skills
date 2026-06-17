@@ -1,6 +1,10 @@
 ---
 name: rethink
-description: Use when you have an existing solution, design, draft, plan, or code structure and need genuinely different approaches — not tweaks or variations. Triggers: feeling anchored, "try another way", "rethink this", a solution that works but feels uninspired, or an approach that keeps hitting the same wall.
+description: >-
+  Use when you have an existing solution, design, draft, plan, or code structure
+  and need genuinely different approaches — not tweaks or variations. Triggers:
+  feeling anchored, "try another way", "rethink this", a solution that works but
+  feels uninspired, or an approach that keeps hitting the same wall.
 ---
 
 # Rethink
