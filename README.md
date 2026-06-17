@@ -4,6 +4,14 @@ A collection of personal [Claude Code](https://docs.claude.com/en/docs/claude-co
 
 [![Install with skills.sh](https://skills.sh/b/VanKyle00/claude-skills)](https://skills.sh/VanKyle00/claude-skills)
 
+Install all of them globally with the [`skills`](https://github.com/vercel-labs/skills) CLI:
+
+```bash
+npx skills add VanKyle00/claude-skills -g
+```
+
+See [Installing](#installing) for project-local installs and picking individual skills.
+
 ## Skills
 
 ### `rethink`
@@ -79,12 +87,18 @@ genuinely require fetching.)
 With the [`skills`](https://github.com/vercel-labs/skills) CLI (works with Claude Code, Codex, Cursor, and more):
 
 ```bash
-# All skills
+# All skills, available in every project (global) — recommended
+npx skills add VanKyle00/claude-skills -g
+
+# All skills, scoped to the current project only (default)
 npx skills add VanKyle00/claude-skills
 
-# Or pick specific ones
+# Or pick specific ones (add -g to install them globally)
 npx skills add VanKyle00/claude-skills --skill rethink --skill lean-search
 ```
+
+`-g` installs to `~/.claude/skills/` (shared across all your projects); omitting it
+installs into the current project's `./.claude/skills/`.
 
 Or copy a skill folder into your Claude Code skills directory manually:
 
